@@ -53,27 +53,17 @@ const myScroll = new Scroll({
 
 class Runner {
     constructor(option) {
-            this.ele = document.querySelector(option.ele)
-            this.ele.addEventListener('mouseover', () => {
-                // this.ele.style.margin = `${this.rand()}+ px ${this.rand()}px ${this.rand()}px ${this.rand()}px`
-                // this.wind() 
-                $(option.ele).on('mouseover',
-                    $(option.ele).css({
-                        marginLeft: Math.floor(Math.random() * ((window.innerWidth - 250) + 250) - this.ele.clientWidth) + "px",
-                        marginTop: Math.floor(Math.random() * ((window.innerHeight - 250) + 250) - this.ele.clientHeight) + "px",
-                    }))
-            });
-            // this.window.addEventListener('mouseover', () => {wind()});
-        }
-        /* rand(innerHeight, innerWidth) {
-        return Math.floor(Math.random() * 100)
+        this.ele = document.querySelector(option.ele)
+        this.nav = document.querySelector(option.el)
+        $(option.ele).on('mouseover', () => {
+            $(option.ele).css({
+                marginLeft: Math.floor(Math.random() * (window.innerWidth - this.ele.clientWidth)) + "px",
+                marginTop: Math.floor(Math.random() * (window.innerHeight - this.ele.clientHeight - this.nav.clientHeight)) + "px",
+            })
+        })
     }
-    wind() {
-        this.ele.style.margin = `${innerHeight - this.rand(innerHeight)}px 0 0 ${innerWidth - this.rand(innerWidth) - clientWidth}px`;
-    }
- */
-    git
 }
 const headerRunner = new Runner({
-    ele: ".header__content"
+    ele: ".header__content",
+    el: ".header__nav"
 })
