@@ -59,7 +59,7 @@ class Runner {
                 // this.wind() 
                 $(option.ele).on('mouseover',
                     $(option.ele).css({
-                        marginLeft: Math.floor(Math.random() * ((window.innerWidth - 250) + 250) - this.ele.clientHeight) + "px",
+                        marginLeft: Math.floor(Math.random() * ((window.innerWidth - 250) + 250) - this.ele.clientWidth) + "px",
                         marginTop: Math.floor(Math.random() * ((window.innerHeight - 250) + 250) - this.ele.clientHeight) + "px",
                     }))
             });
