@@ -43,29 +43,37 @@ class Scroll {
 
 
 
-    const myScroll = new Scroll({
-        el: ".header__nav",
-        top: 100,
-        unit: "%"
-    })
+
 }
+const myScroll = new Scroll({
+    el: ".header__nav",
+    top: 100,
+    unit: "%"
+})
 
 class Runner {
     constructor(option) {
-        this.ele = document.querySelector(obj.ele)
-        this.ele.addEventListener('mouseover', () => {
-            this.ele.style.margin = `${this.rand()}px ${this.rand()}px ${this.rand()}px ${this.rand()}px`
-        })
-
+            this.ele = document.querySelector(option.ele)
+            this.ele.addEventListener('mouseover', () => {
+                // this.ele.style.margin = `${this.rand()}+ px ${this.rand()}px ${this.rand()}px ${this.rand()}px`
+                // this.wind() 
+                $(option.ele).on('mouseover',
+                    $(option.ele).css({
+                        marginLeft: Math.floor(Math.random() * ((window.innerWidth - 250) + 250) - this.ele.clientHeight) + "px",
+                        marginTop: Math.floor(Math.random() * ((window.innerHeight - 250) + 250) - this.ele.clientHeight) + "px",
+                    }))
+            });
+            // this.window.addEventListener('mouseover', () => {wind()});
+        }
+        /* rand(innerHeight, innerWidth) {
+        return Math.floor(Math.random() * 100)
     }
-    rand() {
-        return Math.floor(Math.random() * 500 + 1)
+    wind() {
+        this.ele.style.margin = `${innerHeight - this.rand(innerHeight)}px 0 0 ${innerWidth - this.rand(innerWidth) - clientWidth}px`;
     }
-
-
-
-    const headerRunner = new Runner({
-        ele: ".header__content"
-    })
-
+ */
+    git
 }
+const headerRunner = new Runner({
+    ele: ".header__content"
+})
